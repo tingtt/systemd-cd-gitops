@@ -1,0 +1,12 @@
+git_remote_url = "https://github.com/tingtt/workspace-go.git"
+git_target_branch = "main"
+name = "workspace-go"
+build_commands = ["/usr/bin/go build"]
+binaries = ["workspace-go"]
+
+[[systemd_services]]
+name = "workspace-go"
+description = "Sample go project"
+exec_start = "workspace-go"
+args = "--port 80"
+port = 80
