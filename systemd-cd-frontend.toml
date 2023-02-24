@@ -13,7 +13,7 @@ NEXT_PUBLIC_API_URL=http://192.168.56.4:1323/
 [[systemd_services]]
 name = "systemd-cd-frontend"
 description = "systemd-cd frontend with Next.js"
-exec_start_pre = "/root/.local/share/pnpm/pnpm install --prod"
+exec_start_pre = "/root/.local/share/pnpm/pnpm install next"
 exec_start = "/root/.local/share/pnpm/pnpm start"
 args = "--port 80"
 opt_files = [".next/", "package.json", "public/"]
