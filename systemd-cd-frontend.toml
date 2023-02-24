@@ -5,7 +5,7 @@ git_target_branch = "main"
 build_commands = [
   "/root/.local/share/pnpm/pnpm install",
   """cat << EOF > .env.local
-  NETX_PUBLIC_API_URL=http://192.168.56.4:1323/
+  NEXT_PUBLIC_API_URL=http://192.168.56.4:1323/
   """,
   "/root/.local/share/pnpm/pnpm build",
 ]
