@@ -4,7 +4,10 @@ git_remote_url = "https://github.com/tingtt/systemd-cd-frontend.git"
 git_target_branch = "main"
 build_commands = [
   "/root/.local/share/pnpm/pnpm install",
-  "NETX_PUBLIC_API_URL=http://192.168.56.4:1323/ /root/.local/share/pnpm/pnpm build",
+  """cat << EOF > .env.local
+  NETX_PUBLIC_API_URL=http://192.168.56.4:1323/
+  """,
+  "/root/.local/share/pnpm/pnpm build",
 ]
 
 [[systemd_services]]
