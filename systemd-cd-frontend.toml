@@ -11,8 +11,8 @@ build_commands = [
 ]
 
 [[systemd_services]]
-name = "nextjs-workspace"
-description = "tingtt's portfolio with Next.js"
+name = "systemd-cd-frontend"
+description = "systemd-cd frontend with Next.js"
 exec_start_pre = "/root/.local/share/pnpm/pnpm install --prod"
 exec_start = "/root/.local/share/pnpm/pnpm start"
 args = "--port 80"
