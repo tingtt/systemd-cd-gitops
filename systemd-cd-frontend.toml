@@ -16,6 +16,9 @@ NEXT_PUBLIC_API_URL=http://192.168.56.8:1323/
 name = "systemd-cd-frontend"
 description = "systemd-cd frontend with Next.js"
 exec_start = "/usr/bin/node .next/standalone/server.js"
-args = "--port 80"
 opt_files = [".next/standalone/"]
 port = 80
+
+[[systemd_services.env]]
+name = "PORT"
+description = "80"
