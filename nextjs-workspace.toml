@@ -1,0 +1,18 @@
+name = "nextjs-workspace"
+
+git_remote_url = "https://github.com/tingtt/workspace-nextjs.git"
+git_target_branch = "main"
+build_commands = [
+  "/root/.local/share/pnpm/pnpm install",
+  "/root/.local/share/pnpm/pnpm build",
+  "cp -r .next/static .next/standalone/.next/static",
+  "cp -r public .next/standalone"
+]
+
+[[systemd_services]]
+name = "nextjs-workspace"
+description = "CI/CD sample with Next.js"
+exec_start = "/usr/bin/node .next/standalone/server.js"
+args = "--port 3000"
+opt_files = [".next/standalone/"]
+port = 3000
