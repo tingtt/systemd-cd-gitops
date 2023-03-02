@@ -6,7 +6,6 @@ build_commands = [
 "/root/.local/share/pnpm/pnpm install",
 """cat << EOF > .env.local
 NEXT_PUBLIC_API_URL=http://192.168.56.8:1323/
-PORT=80
 """,
 "/root/.local/share/pnpm/pnpm build",
 "cp -r .next/static .next/standalone/.next/static",
@@ -19,3 +18,7 @@ description = "systemd-cd frontend with Next.js"
 exec_start = "/usr/bin/node .next/standalone/server.js"
 opt_files = [".next/standalone/"]
 port = 80
+
+[[systemd_services.env]]
+name = "PORT"
+value = "80"
