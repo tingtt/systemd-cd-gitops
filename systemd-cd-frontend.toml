@@ -1,15 +1,14 @@
 name = "systemd-cd-frontend"
-
 git_remote_url = "https://github.com/tingtt/systemd-cd-frontend.git"
 git_target_branch = "main"
 build_commands = [
-"/root/.local/share/pnpm/pnpm install",
-"""cat << EOF > .env.local
-NEXT_PUBLIC_API_URL=http://192.168.56.8:1323/
+  "/usr/local/bin/pnpm install",
+  """cat << EOF > .env.local
+NEXT_PUBLIC_API_URL=http://localhost:1323/
 """,
-"/root/.local/share/pnpm/pnpm build",
-"cp -r .next/static .next/standalone/.next/static",
-"cp -r public .next/standalone"
+  "/usr/local/bin/pnpm build",
+  "cp -r .next/static .next/standalone/.next/static",
+  "cp -r public .next/standalone"
 ]
 
 [[systemd_services]]
